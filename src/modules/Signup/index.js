@@ -25,7 +25,7 @@ const Signup = () => {
       if(user) {
           navigation('/');
       }
-  }, [])
+  }, [navigation, user])
 
   const signUp = async (values, { setSubmitting }) => { 
         console.log(values);

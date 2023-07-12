@@ -11,14 +11,11 @@ import Chat from './components/Chat';
 import Tournaments from './components/Tournaments';
 import CoachingResources from './components/CoachingResources';
 import Community from './components/Community';
+import Subscription from './components/subscription';
 import Login from './modules/Login';
 import Signup from './modules/Signup';
-//import Checkout from './modules/Checkout';
-//import Orders from './modules/Orders';
 import Home from './modules/Home';
 import { Routes, Route } from 'react-router-dom';
-//import CategoryProducts from './modules/CategoryProducts';
-//import Cart from './modules/Cart';
 import { MyGlobalContext } from './utils/context';
 import { getUser } from './utils/utilites';
 
@@ -52,6 +49,7 @@ function App() {
           <Route path="/reservations" element={<Reservations/>} />
           <Route path="/tournaments" element={<Tournaments/>} />
           <Route path="/community" element={<Community/>} />
+          <Route path="/subscription" element={<Subscription/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="*" element={<div>404</div>} />

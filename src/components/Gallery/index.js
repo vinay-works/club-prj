@@ -11,7 +11,7 @@ import {
 const Gallery = () => {
   // Dummy image URLs for demonstration
   const galleryImages = [
-    'https://via.placeholder.com/300',
+    'https://www.chartoo.in/itunes/app/543186831-8-ball-pool%E2%84%A2',
     'https://via.placeholder.com/300',
     'https://via.placeholder.com/300',
     'https://via.placeholder.com/300',
@@ -24,7 +24,7 @@ const Gallery = () => {
         <h2 className="text-2xl text-indigo-500 tracking-widest font-medium title-font mb-1">
           Gallery
         </h2>
-        <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+        <h1 className="sm:text-3xl text-2xl font-medium title-font text-secondary-900">
           The club's facilities, tournaments, and achievements.
         </h1>
       </div>
@@ -35,7 +35,7 @@ const Gallery = () => {
             {galleryImages.map((image, index) => (
               <Box
                 key={index}
-                bg="white"
+                bg="Secondary.100"
                 borderWidth="1px"
                 borderColor="gray.200"
                 borderRadius="md"

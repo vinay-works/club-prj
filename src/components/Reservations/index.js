@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChakraProvider, Box, Container, Heading, Text, VStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, FormControl, FormLabel, Input, useToast } from '@chakra-ui/react';
-//import DatePicker from 'react-datepicker';
-//import 'react-datepicker/dist/react-datepicker.css';
+
 
 const Reservation = () => {
   // eslint-disable-next-line no-unused-vars

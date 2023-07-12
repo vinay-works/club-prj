@@ -1,22 +1,21 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { VStack, IconButton, useColorMode } from "@chakra-ui/react";
+import { FaSun, FaMoon, } from "react-icons/fa";
+
 import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
   MenuGroup,
-  MenuOptionGroup,
-  Button,
+  //Button,
   Flex,
   Avatar,
 } from '@chakra-ui/react';
 import supabaseClient from '../../utils/supabaseClient';
 import avatar from '../../avatar.jpg';
 import { useGlobalContext } from '../../utils/context';
-import Reservation from '../Reservations';
 //import logo from '../../assets/Logo.png'; // Import your logo image
 
 
@@ -68,20 +67,28 @@ const navigations = [
   {
     name: 'Community',
     path: '/Community'
-  }
+  },
 
+  {
+    name: 'Subscription',
+    path: '/Subscription'
+  }
 ]
+
 
 const Header = () => {
   const { user, setUser } = useGlobalContext();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true)
+  // eslint-disable-next-line no-unused-vars
+  const [loading] = useState(true)
 
   const signOut = async () => { 
     localStorage.removeItem('cart');
     await supabaseClient.auth.signOut();
     setUser(null);
   }
+
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <header className="bg-black text-gray-600 body-font shadow-lg">
@@ -106,13 +113,32 @@ const Header = () => {
             })
           }
         </nav>
-        <Flex direction={'row'} gap={4}>
-          <Link to={'/Login'} className="inline-flex items-center text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0">Login
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </Link>
+        <div>
+      <VStack p={4}>
+        <IconButton
+          icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+          isRound="true"
+          size="lg"
+          alignSelf="flex-end"
+          onClick={toggleColorMode}
+        />
+      </VStack>
+      </div>
+      {/*to create nav bar for hiding header features
+      <div>
+      <VStack p={4}>
+        <IconButton
+          icon={colorMode === "light" ? <FaHome /> : <FaUser />}
+          isRound="off"
+          size="lg"
+          alignSelf="flex-end"
+          onClick={toggleColorMode}
+        />
+      </VStack>
 
+      </div>
+      */}
+        <Flex direction={'row'} gap={4}>
           {
             user && 
             <Menu>
