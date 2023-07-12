@@ -9,13 +9,13 @@ import {
 } from '@chakra-ui/react';
 
 const Gallery = () => {
-  // Dummy image URLs for demonstration
+  // Dummy image URLs 
   const galleryImages = [
-    'https://www.chartoo.in/itunes/app/543186831-8-ball-pool%E2%84%A2',
-    'https://via.placeholder.com/300',
-    'https://via.placeholder.com/300',
-    'https://via.placeholder.com/300',
-    'https://via.placeholder.com/300',
+    'https://img.freepik.com/free-vector/casino-card-element_1394-1884.jpg?size=626&ext=jpg',
+    'https://img.freepik.com/free-photo/casino-tokens-yellow-background_23-2148952332.jpg?size=626&ext=jpg',
+    'https://img.freepik.com/premium-vector/falling-casino-dices-aces-concept-winning-gambling-poker-card-games_206725-69.jpg?size=626&ext=jpg',
+    'https://img.freepik.com/free-vector/casino-symbols_1017-7745.jpg?size=626&ext=jpg',
+
   ];
 
   return (
@@ -28,12 +28,12 @@ const Gallery = () => {
           The club's facilities, tournaments, and achievements.
         </h1>
       </div>
-      {/* Your existing code */}
-      <Container maxW="xl" mt={20}>
+      <Container maxW="xl" mt={20} >
         <Heading as="h3" size="md" mb={2}>
           <SimpleGrid columns={2} spacing={4}>
             {galleryImages.map((image, index) => (
               <Box
+                flex flex-col imageFit="cover"
                 key={index}
                 bg="Secondary.100"
                 borderWidth="1px"
@@ -44,7 +44,6 @@ const Gallery = () => {
               </Box>
             ))}
           </SimpleGrid>
-          {/* Rest of your code */}
         </Heading>
       </Container>
     </ChakraProvider>

@@ -43,8 +43,6 @@ const Chat = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Process the contact form data or initiate a live chat session
-    // You can replace the console.log statements with your own logic
     console.log('Name:', formData.name);
     console.log('Email:', formData.email);
     console.log('Message:', formData.message);

@@ -1,14 +1,36 @@
 import React, { useState } from 'react';
-import { ChakraProvider, Box, Container, Heading, Text, VStack, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, FormControl, FormLabel, Input, useToast } from '@chakra-ui/react';
-
+import {
+  ChakraProvider,
+  Box,
+  Container,
+  Heading,
+  Text,
+  VStack,
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  FormControl,
+  FormLabel,
+  Input,
+  useToast,
+} from '@chakra-ui/react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Reservation = () => {
-  // eslint-disable-next-line no-unused-vars
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [reservationData, setReservationData] = useState({ name: '', email: '', table: '', date: '', time: '' });
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setSelectedTime(null);
+  };
 
   const handleTimeChange = (time) => {
     setSelectedTime(time);
@@ -53,23 +75,27 @@ const Reservation = () => {
     <ChakraProvider>
       <Box py={10}>
         <Container maxW="xl">
-          <VStack spacing={6} align="center">
+          <VStack spacing={6} align="center" >
             <Heading as="h1" size="xl" mb={6}>
               Snooker Table Reservation
             </Heading>
             <Text fontSize="lg">
               Select a date and time from the calendar to book a snooker table.
             </Text>
-            {/*<DatePicker
-              selected={selectedDate}
-              onChange={handleDateChange}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-              className="form-control"
-  />*/}
+
+            <FormControl>
+              <FormLabel>Date</FormLabel>
+              <DatePicker
+                selected={selectedDate}
+                onChange={handleDateChange}
+                dateFormat="dd/MM/yyyy"
+                minDate={new Date()}
+                customInput={<Input />}
+              />
+            </FormControl>
             {selectedDate && (
               <>
-                <Text fontSize="lg" fontWeight="bold" mt={4}>
+                <Text fontSize="lg" fontStyle="dark" fontWeight="bold" mt={4} >
                   Available Time Slots for {selectedDate.toLocaleDateString()}
                 </Text>
                 <VStack spacing={2}>

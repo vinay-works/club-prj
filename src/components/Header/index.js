@@ -124,20 +124,6 @@ const Header = () => {
         />
       </VStack>
       </div>
-      {/*to create nav bar for hiding header features
-      <div>
-      <VStack p={4}>
-        <IconButton
-          icon={colorMode === "light" ? <FaHome /> : <FaUser />}
-          isRound="off"
-          size="lg"
-          alignSelf="flex-end"
-          onClick={toggleColorMode}
-        />
-      </VStack>
-
-      </div>
-      */}
         <Flex direction={'row'} gap={4}>
           {
             user && 

@@ -18,9 +18,7 @@ const Membership = () => {
   };
 
   const handlePayment = () => {
-    // Perform payment logic here
     if (selectedMembership) {
-      // Process payment for the selected membership
       console.log(`Payment processed for ${selectedMembership}`);
     } else {
       console.log('Please select a membership');

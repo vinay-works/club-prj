@@ -83,7 +83,6 @@ const Login = () => {
                                 handleBlur,
                                 handleSubmit,
                                 isSubmitting,
-                                /* and other goodies */
                             }) => (
                                 <form>
                                     <div>

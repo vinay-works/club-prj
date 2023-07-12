@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Heading,
-  //Text,
   VStack,
   FormControl,
   FormLabel,
@@ -41,10 +40,6 @@ const Tournament = () => {
   };
 
   const handleFixtureGenerate = () => {
-    // Generate fixtures logic here
-    // You can use a library or implement your own algorithm
-    // Store the generated fixtures in the state variable
-    // For example:
     const generatedFixtures = [
       { round: 1, match: 'Player A vs Player B' },
       { round: 1, match: 'Player C vs Player D' },
@@ -55,7 +50,6 @@ const Tournament = () => {
   };
 
   const handleResultSubmit = (fixtureIndex, result) => {
-    // Update the result for the specified fixture
     setResults((prevResults) => {
       const updatedResults = [...prevResults];
       updatedResults[fixtureIndex] = result;
