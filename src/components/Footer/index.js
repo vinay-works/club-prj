@@ -1,5 +1,6 @@
-import React from 'react';
-import { ChakraProvider, Box, Flex, Text, Link } from '@chakra-ui/react';
+import React from "react";
+import { ChakraProvider, Box, Flex, Text, Link } from "@chakra-ui/react";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,17 +11,17 @@ const Footer = () => {
             &copy; 2023 Your Company. All rights reserved.
           </Text>
           <Text fontSize="sm" mb={4}>
-            Made with ❤️ by Your Name
+            Made with ❤️ by Team Enigma
           </Text>
           <Flex>
-            <Link color="white" mx={2}>
-              About
+            <Link href={"https://www.facebook.com/"} target="_blank" color="white" mx={2}>
+              <FaFacebook />
             </Link>
-            <Link color="white" mx={2}>
-              Services
+            <Link href={"https://twitter.com/"} target="_blank" color="white" mx={2}>
+              <FaTwitter />
             </Link>
-            <Link color="white" mx={2}>
-              Contact
+            <Link href={"https://www.instagram.com/"} target="_blank" color="white" mx={2}>
+              <FaInstagram />
             </Link>
           </Flex>
         </Flex>
