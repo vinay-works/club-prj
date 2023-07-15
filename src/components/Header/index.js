@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { VStack, IconButton, useColorMode } from "@chakra-ui/react";
 import { FaSun, FaMoon, } from "react-icons/fa";
-
 import {
   Menu,
   MenuButton,
@@ -16,7 +15,6 @@ import {
 import supabaseClient from '../../utils/supabaseClient';
 import avatar from '../../avatar.jpg';
 import { useGlobalContext } from '../../utils/context';
-//import logo from '../../assets/Logo.png'; // Import your logo image
 
 
 const navigations = [
@@ -93,13 +91,12 @@ const Header = () => {
   return (
     <header className="bg-black text-gray-600 body-font shadow-lg">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <logo className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="https://cdn.pixabay.com/photo/2016/03/31/20/28/billiards-1295784_1280.png" alt="Logo" border="0" width="100" height="100" />
+        </logo>
+
         <Link to={'/'} className="flex cursor-pointer title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <img
-            src={""}
-            alt="Logo"
-            className="w-30 h-20 object-contain"
-            style={{ paddingLeft: '35px' }}
-          />
+
         </Link>
 
         <nav className="md:ml-auto md:mr-auto text-white flex flex-wrap items-center text-base justify-center">

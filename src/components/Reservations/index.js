@@ -53,9 +53,6 @@ const Reservation = () => {
   };
 
   const handleReservationSubmit = () => {
-    // Implement your reservation submission logic here
-    // For example, you can make an API call to process the reservation and payment
-    // Once the reservation is successfully submitted, you can show a success toast message
     toast({
       title: 'Reservation Successful',
       description: 'Your reservation has been confirmed.',
